@@ -19,6 +19,7 @@ glycowork = "*"
 nxontology = "*"
 numpy-indexed = "*"
 glyles = ">=1.2.3a0"
+platformdirs = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"

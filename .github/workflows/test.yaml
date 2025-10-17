@@ -34,7 +34,7 @@ jobs:
       - name: Install environment
         shell: bash -l {0}
         run: |
-          pip install datasail glycowork nxontology numpy-indexed glyles">=1.2.3a0" pytest pytest-cov
+          pip install datasail glycowork nxontology numpy-indexed glyles">=1.2.3a0" platformdirs pytest pytest-cov
         
       - name: Run tests
         shell: bash -l {0}
@@ -42,9 +42,9 @@ jobs:
           cd tests
           pytest --cov=../glycogym/ --cov-report=xml
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: false
-          files: coverage.xml
+      # - name: Upload coverage to Codecov
+      #   uses: codecov/codecov-action@v3
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     fail_ci_if_error: false
+      #     files: coverage.xml

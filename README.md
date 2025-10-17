@@ -2,6 +2,9 @@
   <img src="/docs/imgs/glycogym_banner.svg" style="height:100%;width:100%;">
 </p>
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17313055.svg)](https://doi.org/10.5281/zenodo.17313055)
+![testing](https://github.com/bojarlab/glycogym/actions/workflows/test.yaml/badge.svg)
+
 Glycan property prediction is an increasingly popular area of machine learning research. Supervised learning approaches have shown promise in glycan modeling; however, the current literature is fragmented regarding datasets and standardized evaluation techniques, hampering progress in understanding these complex, branched carbohydrates that play crucial roles in biological processes. To facilitate progress, we introduce GlycoGym, a comprehensive benchmark suite containing six biologically relevant supervised learning tasks spanning different domains of glycobiology: glycosylation linkage identification, tissue expression prediction, taxonomy classification, tandem mass spectrometry fragmentation prediction, lectin-glycan interaction modeling, and structural property estimation. We curate tasks into specific training, validation, and test splits using multi-class stratification to ensure that each task tests biologically relevant generalization that transfers to real-life glycan property prediction scenarios. GlycoGym will help the machine learning community to focus their efforts on scientifically relevant glycan prediction problems.
 
 ## Installation
@@ -54,6 +57,10 @@ from glycontact.learning import create_dataset
 
 train, val, test = create_dataset(splits=[0.7, 0.2, 0.1])
 ```
+
+## Zenodo
+
+The latest version of the GlycoGym benchmark can be found on Zenodo: https://doi.org/10.5281/zenodo.17313055
 
 ## Citation
 

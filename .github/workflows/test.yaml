@@ -1,0 +1,50 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Testing
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:  # make is manually start-able
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "test"
+  test:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Mamba
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          python-version: '3.12'
+          miniforge-version: latest
+          activate-environment: MPP
+          use-mamba: true
+          
+      - name: Install environment
+        shell: bash -l {0}
+        run: |
+          pip install datasail glycowork nxontology numpy-indexed glyles">=1.2.3a0" pytest pytest-cov
+        
+      - name: Run tests
+        shell: bash -l {0}
+        run: |
+          cd tests
+          pytest --cov=../glycogym/ --cov-report=xml
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: coverage.xml

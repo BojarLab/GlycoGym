@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "glycocym"
+name = "glycogym"
 version = "1.0.0"
 repository = "https://github.com/BojarLab/GlycoGym"
 readme = "README.md"

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "glycogym"
-version = "1.0.0"
+version = "1.0.1"
 repository = "https://github.com/BojarLab/GlycoGym"
 readme = "README.md"
 description = "A benchmark collection for glycan property prediction with tasks from variuos, glycobiologically relevant tasks."
@@ -14,7 +14,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.10"
-datasail = "*"
+datasail = ">=1.2.3"
 glycowork = "*"
 nxontology = "*"
 numpy-indexed = "*"

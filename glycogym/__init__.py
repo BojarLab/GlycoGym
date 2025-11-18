@@ -13,5 +13,8 @@ def __getattr__(name):
     elif name == "build_tissue":
         from glycogym.glycogym import build_tissue
         return build_tissue
+    elif name == "explore_glycoverse":
+        from glycogym.glycoverse import explore_glycoverse
+        return explore_glycoverse
     else:
         raise AttributeError(f"module {__name__} has no attribute {name}")

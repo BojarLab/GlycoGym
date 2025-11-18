@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "glycogym"
-version = "1.0.1"
+version = "1.0.2"
 repository = "https://github.com/BojarLab/GlycoGym"
 readme = "README.md"
 description = "A benchmark collection for glycan property prediction with tasks from variuos, glycobiologically relevant tasks."
